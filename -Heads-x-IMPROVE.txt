@@ -1,0 +1,58 @@
+#define  _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <malloc.h>
+#include <time.h>
+#include <stdlib.h>
+#include <iostream>
+#include <cstdlib>
+int* a;
+int* b;
+int n, m=0, t=0, j;
+	int main() 
+	{		
+		printf("press n\n");
+		scanf("%d", &n);
+		
+		for ( j = 0; j < n; j++)
+		{
+			srand(time(NULL));
+			m = m + rand() % 10 + 1;//прибавляю 1, чтобы размер массива не был равен 0, пирбавляю m чтобы все массивы были разного размера (первый массив будет размером меньше 10 для удобства, можно и сделать большего размера)
+			printf("m=%d\n", m);
+			getchar();
+			a = (int*)malloc(m * sizeof(int));
+			b = (int*)malloc(n * sizeof(int));
+		
+			srand(time(NULL));
+			for (int i = 0; i < m; i++)
+			{				
+				 a[i] = 101 * i + rand() % 100;//привавляю 101*i чтобы каждое следующее число было больше предыдущего (первое число будет меньше 100 для удобства )							
+				printf("%d ", a[i]);
+				b[i] = m;
+				
+			} 
+						
+			getchar();
+			free(a);
+			
+			printf("\n");			
+		}
+		for (int i = 0; i < n; i++)
+			{
+				printf("%d ", b[i]);
+			}
+			int** a = (int**)malloc(n * sizeof(int*));
+	
+	for (int i = 0; i < n; i++) {
+		a[i] = (int*)malloc(m * sizeof(int));
+	}
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < m; j++) {
+			a[i][j] = ?;//не знаю что написать 
+			printf("%d ", a[i][j]);
+		}
+		printf("\n");
+	}
+	free(a);
+		return 0;
+	}
+	
